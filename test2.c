@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   test.c                                             :+:      :+:    :+:   */
+/*   test2.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sforster <sforster@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/14 08:50:30 by sforster          #+#    #+#             */
-/*   Updated: 2023/11/15 09:58:11 by sforster         ###   ########.fr       */
+/*   Created: 2023/11/15 09:59:35 by sforster          #+#    #+#             */
+/*   Updated: 2023/11/15 10:03:41 by sforster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,6 @@
 
 int main(void)
 {
-	printf("I was in Paris this weekend for 4 days\n");
-	printf("I was in %s this weekend for %d days\n", "Paris");
+	int	result = printf("I was in Paris this weekend for 4 days ouhlalahla\n");
+	printf("%d", result);
 }
