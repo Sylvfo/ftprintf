@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_print.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sforster <sforster@student.42.fr>          +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/14 11:34:45 by sforster          #+#    #+#             */
-/*   Updated: 2023/11/15 11:28:06 by sforster         ###   ########.fr       */
+/*   Updated: 2023/11/16 20:18:06 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ int ft_printf(const char *, ...)
 {
 	int	count;
 	int	i;
+	int	previ;
+	int countarg
 
 	while (const char *[i])
 	{
