@@ -6,12 +6,11 @@
 #    By: sforster <sforster@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/14 11:38:14 by sforster          #+#    #+#              #
-#    Updated: 2023/11/17 10:55:16 by sforster         ###   ########.fr        #
+#    Updated: 2023/11/17 11:39:08 by sforster         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-
-SRCS	= ft_printf.c	ft_print_c.c
+SRCS	= ft_printf.c	ft_print_c.c	ft_print_s.c
 NAME	= libftprintf.a
 CC		= gcc
 CFLAGS	= -Wall -Wextra -Werror
@@ -19,9 +18,10 @@ RM		= rm -f
 
 OBJ		:= $(SRCS:%.c=%.o)
 
-all: 		$(NAME)
+.c.o:
+	${CC} $(CFLAGS) -c $< -o ${<:.c=.o}
 
-re: fclean 	all
+all: 		$(NAME)
 
 $(NAME):	$(OBJ)
 				ar	rcs $(NAME) $(OBJ)
@@ -32,5 +32,7 @@ clean:
 
 fclean:		clean
 				$(RM) $(NAME)
+
+re: fclean 	all
 
 .PHONY:		all re clean fclean bin

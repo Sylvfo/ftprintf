@@ -1,22 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_c.c                                       :+:      :+:    :+:   */
+/*   ft_print_s.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sforster <sforster@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/17 10:26:31 by sforster          #+#    #+#             */
-/*   Updated: 2023/11/17 11:38:59 by sforster         ###   ########.fr       */
+/*   Created: 2023/11/17 11:30:09 by sforster          #+#    #+#             */
+/*   Updated: 2023/11/17 11:39:01 by sforster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_print_c(int a)
+int	ft_print_s(char *str)
 {
 	int	i;
 
-	i = 1;
-	write (1, &a, 1);
+	i = 0;
+	while (str[i])
+	{
+		write (1, str + i, 1);
+		i++;
+	}
 	return (i);
 }
