@@ -17,6 +17,6 @@
 #include <stdarg.h>
 
 int ft_printf(const char *f, ...);
-int ft_c(char c);
+int ft_print_c(char c);
 
 #endif

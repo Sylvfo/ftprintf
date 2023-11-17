@@ -14,46 +14,29 @@
 #include <stdio.h>
 #include <unistd.h>
 
-int	ft_handleXXX()
+int	ft_handlevariadics(char print_type, va_list args)
 {
-	int	i;
-
-	i = 100;
-	write (1, "X", 1);
-	write (1, "X", 1);
-	write (1, "X", 1);
-	return (i);
-}
-
-int	ft_countperc(const char *str)
-{
-	int	count;
 	int	i;
 
 	i = 0;
-	count = 0;
-	while (str[i])
-	{
-	if (str[i] == '%')
-		count++;
-	i++;
-	}
-	return (count);
+	if (print_type == 'c')
+		i +=  ft_print_c(va_arg(args, int));
+	if (print_type == 's')
+		i += ft_print_s(va_arg(args, *char));
+	return (i);
 }
 
 int	ft_printf(const char *format, ...)
 {
 	int	i;
 	int	prev_i;
-	int	arg_i;
 	int	count;
 	va_list	args;
 
 	i = 0;
 	prev_i = 0;
-	arg_i = ft_countperc(format);
 	count = 0;
-	va_start(args, 2);
+	va_start(args, format);
 	while (format[i])
 	{
 		while (format[i] != '%' && format[i] != 0)
@@ -62,16 +45,18 @@ int	ft_printf(const char *format, ...)
 		count += i - prev_i;
 		if (format[i] == '%')
 		{
-			count += ft_handleXXX();
+			count += ft_handlevariadics(*(format + i + 1), args);
 			i += 2;
 			prev_i = i;
 		}
 	}
+	va_end(args);
 	return (count);
 }
 
 int	main(void)
 {
-	printf("%i", ft_printf("rahl%ahlah", 1));
+	ft_printf("123456%c", 'u');
+	printf("%i", ft_printf("123456%c", 'u'));
 	return (0);
 }
