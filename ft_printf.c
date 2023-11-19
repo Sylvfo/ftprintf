@@ -31,9 +31,9 @@ int	ft_handlevariadics(char print_type, va_list args)
 
 int	ft_printf(const char *format, ...)
 {
-	int	i;
-	int	prev_i;
-	int	count;
+	int		i;
+	int		prev_i;
+	int		count;
 	va_list	args;
 
 	i = 0;
@@ -59,6 +59,6 @@ int	ft_printf(const char *format, ...)
 
 int	main(void)
 {
-	printf("%i", ft_printf("Hey%d", "2000"));
+	printf("%i", ft_printf("Hey %d ", -123456));
 	return (0);
 }

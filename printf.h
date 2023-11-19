@@ -10,17 +10,25 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-
-
 #ifndef PRINTF_H
 # define PRINTF_H
-#include <unistd.h>
-#include <stdarg.h>
-#include <stdlib.h>
+# include <unistd.h>
+# include <stdarg.h>
+# include <stdlib.h>
 
-int	ft_printf(const char *f, ...);
-int	ft_print_c(int c);
-int	ft_print_s(char *str);
-int	ft_print_d(int n);
+typedef struct s_list
+{
+	void			*content;
+	size_t			*content_size;
+	struct s_list	*next;
+}					t_list;
+
+int		ft_printf(const char *f, ...);
+int		ft_print_c(int c);
+int		ft_print_s(char *str);
+int		ft_print_d(int n);
+void	*ft_calloc(size_t count, size_t size);
+char	*ft_strdup(const char *s);
+int		ft_strlen(const char *str);
 
 #endif
