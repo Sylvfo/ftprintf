@@ -10,13 +10,17 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+
+
 #ifndef PRINTF_H
 # define PRINTF_H
-
 #include <unistd.h>
 #include <stdarg.h>
+#include <stdlib.h>
 
-int ft_printf(const char *f, ...);
-int ft_print_c(char c);
+int	ft_printf(const char *f, ...);
+int	ft_print_c(int c);
+int	ft_print_s(char *str);
+int	ft_print_d(int n);
 
 #endif

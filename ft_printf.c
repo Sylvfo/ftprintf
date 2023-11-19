@@ -13,7 +13,7 @@
 #include <stdarg.h>
 #include <stdio.h>
 #include <unistd.h>
-#include "ft_printf.h"
+#include "printf.h"
 
 int	ft_handlevariadics(char print_type, va_list args)
 {
@@ -24,6 +24,8 @@ int	ft_handlevariadics(char print_type, va_list args)
 		i += ft_print_c(va_arg(args, int));
 	if (print_type == 's')
 		i += ft_print_s(va_arg(args, char *));
+	if (print_type == 'd')
+		i += ft_print_d(va_arg(args, int));
 	return (i);
 }
 
@@ -57,6 +59,6 @@ int	ft_printf(const char *format, ...)
 
 int	main(void)
 {
-	printf("%i", ft_printf("123456%s", "lune"));
+	printf("%i", ft_printf("Hey%d", "2000"));
 	return (0);
 }
