@@ -25,7 +25,7 @@ int	nblong(int n)
 	return (count);
 }
 
-char	*ft_intochar(int un)
+char	*ft_intochar(unsigned int un)
 {
 	char	*num;
 	int		i;

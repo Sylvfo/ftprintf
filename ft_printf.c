@@ -22,10 +22,18 @@ int	ft_handlevariadics(char print_type, va_list args)
 	i = 0;
 	if (print_type == 'c')
 		i += ft_print_c(va_arg(args, int));
-	if (print_type == 's')
+	else if (print_type == 's')
 		i += ft_print_s(va_arg(args, char *));
-	if (print_type == 'd')
+	else if (print_type == 'd')
 		i += ft_print_d(va_arg(args, int));
+// print_digit(v_arg(args, int), 10 )
+	else if (print_type == 'i')
+		i += ft_print_d(va_arg(args, int));
+	else if (print_type == 'u')
+		i += ft_print_d(va_arg(args, unsigned int));
+		else if (print_type == 'x')
+//		i +=  print_digit(v_arg(args, int), 16)
+	else pour %
 	return (i);
 }
 
@@ -40,7 +48,7 @@ int	ft_printf(const char *format, ...)
 	prev_i = 0;
 	count = 0;
 	va_start(args, format);
-	while (format[i])
+	while (format[i] != 0)
 	{
 		while (format[i] != '%' && format[i] != 0)
 			i++;
