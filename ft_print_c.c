@@ -6,11 +6,11 @@
 /*   By: sforster <sforster@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/17 10:26:31 by sforster          #+#    #+#             */
-/*   Updated: 2023/11/20 09:02:53 by sforster         ###   ########.fr       */
+/*   Updated: 2023/11/21 11:45:19 by sforster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#include "ft_printf.h"
 
 int	ft_print_c(int a)
 {

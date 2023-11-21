@@ -13,7 +13,7 @@
 #include <stdarg.h>
 #include <stdio.h>
 #include <unistd.h>
-#include "printf.h"
+#include "ft_printf.h"
 
 int	ft_handlevariadics(char print_type, va_list args)
 {
@@ -26,18 +26,19 @@ int	ft_handlevariadics(char print_type, va_list args)
 		i += ft_print_s(va_arg(args, char *));
 	else if (print_type == 'd')
 		i += ft_print_d(va_arg(args, int));
+	else if (print_type == 'x')
+		i +=  ft_print_x(va_arg(args, int), 16);
 // print_digit((long)v_arg(args, int), 10 )
-	else if (print_type == 'i')
-		i += ft_print_d(va_arg(args, int));
-	else if (print_type == 'u')
-		i += ft_print_d(va_arg(args, unsigned int));
-		else if (print_type == 'x')
-//		i +=  print_digit((long)v_arg(args, int), 16)
-	else pour %
+//	else if (print_type == 'i')
+		// i += ft_print_d(va_arg(args, int));
+	// else if (print_type == 'u')
+		// i += ft_print_d(va_arg(args, unsigned int));
+	
+	// else pour %
 	return (i);
 }
 
-int	ft_printf(const char *format, ...)s
+int	ft_printf(const char *format, ...)
 {
 	int		i;
 	int		prev_i;
@@ -65,8 +66,11 @@ int	ft_printf(const char *format, ...)s
 	return (count);
 }
 
+/*
+
 int	main(void)
 {
-	printf("%i", ft_printf("Hey %d ", -123456));
+	printf("%i", ft_printf("Hey %x ", -12));
 	return (0);
 }
+*/

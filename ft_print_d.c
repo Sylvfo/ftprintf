@@ -10,9 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-
-
-#include "printf.h"
+#include "ft_printf.h"
+#include <stdlib.h>
 
 int	nblong(int n)
 {
@@ -33,7 +32,7 @@ char	*ft_intochar(unsigned int un)
 	int		i;
 
 	i = nblong(un);
-	num = (char *)malloc(i * sizeof(char));
+	num = malloc(i * sizeof(char));
 	if (num == NULL)
 		return (NULL);
 	num[i] = 0;
