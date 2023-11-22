@@ -27,7 +27,7 @@ int	ft_handlevariadics(char print_type, va_list args)
 	else if (print_type == 'd')
 		i += ft_print_d(va_arg(args, int));
 	else if (print_type == 'x')
-		i +=  ft_print_x(va_arg(args, int), 16);
+		i +=  ft_print_x(va_arg(args, unsigned int), 16);
 	else if (print_type == 'i')
 		i += ft_print_i(va_arg(args, int), 10);
 	// else if (print_type == 'u')
@@ -65,12 +65,11 @@ int	ft_printf(const char *format, ...)
 	return (count);
 }
 
-/*
+
 int	main(void)
 {
-	printf("%i \n", ft_printf("Result: %i lg", -2147483648));
+	printf("%i \n", ft_printf("Result: %x lg", -2147483648));
 //	printf("Real printf 2000 result: %x \n", 2000);
 //	printf("Real printf -2000 result: %x \n", -2000);
 	return (0);
 }
-*/

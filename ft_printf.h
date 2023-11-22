@@ -30,7 +30,7 @@ int		ft_print_d(int n);
 void	*ft_calloc(size_t count, size_t size);
 char	*ft_strdup(const char *s);
 int		ft_strlen(const char *str);
-int		ft_print_x(long n, int base);
+int		ft_print_x(unsigned long n, int base);
 int		ft_print_i(long i, int base);
 
 #endif

@@ -6,11 +6,36 @@
 /*   By: sforster <sforster@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 10:50:11 by sforster          #+#    #+#             */
-/*   Updated: 2023/11/21 19:32:07 by sforster         ###   ########.fr       */
+/*   Updated: 2023/11/22 12:09:49 by sforster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+
+int	ft_print_x(unsigned long n, int base)
+{
+	int		count;
+	char	*basesymbols;
+
+	count = 0;
+	basesymbols = "0123456789abcdef";
+	if (n == 0)
+		return(count = write(1, "0", 1));
+	while (n >= base)
+	{
+		count += ft_print_x(n / base, base);
+		n = n % base;
+	}
+	if (n < base)
+		count += write(1, &basesymbols[n], 1);
+	return (count);
+}
+/*
+int main(void)
+{
+	ft_print_x(-20, 16);
+}
+
 
 int	ft_print_x(long n, int base)
 {
@@ -41,35 +66,50 @@ int	ft_print_x(long n, int base)
 }
 
 
+fedcba9876543210
 
-/*
-int main(void)
+
+
+
+int ft_print_xneg(long n, int base)
 {
-	ft_print_x(4350, 16);
+	int i;
+	char	*basesymbneg;
+
+	i = 0;
+	basesymbneg = "fedcba9876543210";
+	while (n >= base)
+	{
+		ft_print_xneg(n / base, base);
+		n = n % base;
+	}
+		if (n < base)
+			write(1, &basesymbneg[n], 1);
+	return (8);
 }
 
 int	ft_print_x(long n, int base)
 {
 	int		count;
-	char	*symbols;
+	char	*basesymbols;
 
-	symbols = "0123456789abcdef";
+	count = 0;
+	basesymbols = "0123456789abcdef";
+	if (n == 0)
+		return(count = write(1, "0", 1));
 	if (n < 0)
 	{
-		write (1, "-", 1);
-		return  ft_print_x(-n, base) + 1;
+		n = -n;
+		return (count = ft_print_x(n, 16));
 	}
-	else if (n < base)
-		return (ft_print_c(symbols[n]));
-	else
+	while (n >= base)
 	{
-		count = ft_print_x(n / base, base);
-		return (count + ft_print_x(n % base, base));
+		count += ft_print_x(n / base, base);
+		n = n % base;
 	}
+	if (n < base)
+		count += write(1, &basesymbols[n], 1);
+	return (count);
 }
-
-
-
-
 
 */
