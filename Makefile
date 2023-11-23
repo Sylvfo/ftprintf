@@ -10,31 +10,27 @@
 #                                                                              #
 # **************************************************************************** #
 
-SRCS	= ft_printf.c	ft_print_c.c	ft_print_s.c	ft_print_d.c\
+SRCS = ft_printf.c	ft_print_c.c	ft_print_s.c	ft_print_d.c\
 		ft_calloc.c	ft_strdup.c	ft_strlen.c	ft_print_x.c\
-		ft_print_i.c
-NAME	= libftprintf.a
-CC		= gcc
-CFLAGS	= -Wall -Wextra -Werror
-INCLUDES = -I./includes
-RM		= rm -f
+		ft_print_i.c	ft_print_u.c
+NAME = libftprintf.a
+CC = gcc
+CFLAGS = -Wall -Wextra -Werror -g
+RM = rm -f
 
-OBJ		:= $(SRCS:.c=.o)
+OBJ := $(SRCS:.c=.o)
 
-.c.o:
-	${CC} $(CFLAGS) -c $< -o ${<:.c=.o}
-
-all: 		$(NAME)
+all: $(NAME)
 
 $(NAME):	$(OBJ)
 				ar	-rcs $(NAME) $(OBJ)
 				ranlib $(NAME)
 
 clean:
-		$(RM) $(OBJ)
+	$(RM) $(OBJ)
 
 fclean:		clean
-				$(RM) $(NAME)
+	$(RM) $(NAME)
 
 re: fclean 	all
 

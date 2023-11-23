@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_print_i.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sforster <sforster@student.42.fr>          +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 17:40:07 by sforster          #+#    #+#             */
-/*   Updated: 2023/11/22 12:09:54 by sforster         ###   ########.fr       */
+/*   Updated: 2023/11/23 22:51:06 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_print_i(long i, int base)
+int	ft_print_i(int i, int base)
 {
 	int		count;
 	char	*basesymb;
@@ -38,3 +38,7 @@ int	ft_print_i(long i, int base)
 	}
 	return (count);
 }
+/*int main(void)
+{
+	ft_print_i(56, 10);
+}*/

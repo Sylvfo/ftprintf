@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_print_x.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sforster <sforster@student.42.fr>          +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 10:50:11 by sforster          #+#    #+#             */
-/*   Updated: 2023/11/22 12:09:49 by sforster         ###   ########.fr       */
+/*   Updated: 2023/11/23 22:51:13 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_print_x(unsigned long n, int base)
+int	ft_print_x(unsigned int n, int base)
 {
 	int		count;
 	char	*basesymbols;
@@ -20,13 +20,13 @@ int	ft_print_x(unsigned long n, int base)
 	count = 0;
 	basesymbols = "0123456789abcdef";
 	if (n == 0)
-		return(count = write(1, "0", 1));
-	while (n >= base)
+		return (count = write(1, "0", 1));
+	while (n >= (unsigned int)base)
 	{
 		count += ft_print_x(n / base, base);
 		n = n % base;
 	}
-	if (n < base)
+	if (n < (unsigned int)base)
 		count += write(1, &basesymbols[n], 1);
 	return (count);
 }

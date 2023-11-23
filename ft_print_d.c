@@ -50,9 +50,7 @@ int	ft_print_d(int n)
 	unsigned int	un;
 	char			*num;
 	int				count;
-	int				i;
 
-	i = 0;
 	count = 0;
 	if (n == 0)
 		num = ft_strdup("0");
