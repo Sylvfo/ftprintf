@@ -31,6 +31,6 @@ int		ft_print_x(unsigned int n, int base);
 int		ft_print_xup(unsigned int n, int base);
 int		ft_print_i(long i, int base);
 int		ft_print_u(unsigned int n, int base);
-int		ft_print_p(void* a);
+int		ft_print_p(void *a);
 
 #endif

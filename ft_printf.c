@@ -37,7 +37,7 @@ int	ft_handlevariadics(char print_type, va_list args)
 	else if (print_type == '%')
 		i += write(1, "%", 1);
 	else if (print_type == 'p')
-		i += ft_print_p(va_arg(args, void*));
+		i += ft_print_p(va_arg(args, void *));
 	else
 		return (i);
 	return (i);
@@ -74,8 +74,8 @@ int	ft_printf(const char *format, ...)
 /*
 int	main(void)
 {
-	ft_printf("%p\n", 16);
-	printf("%p\n", 16);
+	ft_printf("%p\n", "42949672950");
+	printf("%p\n", "42949672950");
 	return (0);
 }
 */
