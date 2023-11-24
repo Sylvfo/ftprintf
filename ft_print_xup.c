@@ -21,12 +21,15 @@ int	ft_print_xup(unsigned int n, int base)
 	symbbase = "0123456789ABCDEF";
 	if (n == 0)
 		return (count = write(1, "0", 1));
-	while (n >= (unsigned int) base)
+	while (n >= (unsigned int)base)
 	{
-		count += ft_print_xup(n / base, base);
+		count += ft_print_xup(n / (unsigned int)base, base);
 		n = n % base;
 	}
 	if (n < (unsigned int) base)
-		count += write (1, &symbbase, 1);
+	{
+		write (1, &symbbase[n], 1);
+		count++;
+	}
 	return (count);
 }

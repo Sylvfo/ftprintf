@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_print_x.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: sforster <sforster@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 10:50:11 by sforster          #+#    #+#             */
-/*   Updated: 2023/11/23 22:51:13 by marvin           ###   ########.fr       */
+/*   Updated: 2023/11/24 12:02:32 by sforster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,13 +23,17 @@ int	ft_print_x(unsigned int n, int base)
 		return (count = write(1, "0", 1));
 	while (n >= (unsigned int)base)
 	{
-		count += ft_print_x(n / base, base);
+		count += ft_print_x(n / (unsigned int)base, base);
 		n = n % base;
 	}
 	if (n < (unsigned int)base)
-		count += write(1, &basesymbols[n], 1);
+	{
+		write(1, &basesymbols[n], 1);
+		count++;
+	}
 	return (count);
 }
+
 /*
 int main(void)
 {

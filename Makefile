@@ -11,8 +11,8 @@
 # **************************************************************************** #
 
 SRCS = ft_printf.c	ft_print_c.c	ft_print_s.c	ft_print_d.c\
-		ft_calloc.c	ft_strdup.c	ft_strlen.c	ft_print_x.c\
-		ft_print_i.c	ft_print_u.c
+		ft_print_x.c	ft_print_i.c	ft_print_u.c	ft_print_xup.c\
+		ft_print_p.c
 NAME = libftprintf.a
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror -g

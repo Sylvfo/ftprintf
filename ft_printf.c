@@ -25,17 +25,21 @@ int	ft_handlevariadics(char print_type, va_list args)
 	else if (print_type == 's')
 		i += ft_print_s(va_arg(args, char *));
 	else if (print_type == 'd')
-		i += ft_print_d(va_arg(args, int));
+		i += ft_print_d(va_arg(args, int), 10);
 	else if (print_type == 'x')
-		i += ft_print_xup(va_arg(args, unsigned int), 16);
-	else if (print_type == 'X')
 		i += ft_print_x(va_arg(args, unsigned int), 16);
+	else if (print_type == 'X')
+		i += ft_print_xup(va_arg(args, unsigned int), 16);
 	else if (print_type == 'i')
 		i += ft_print_i(va_arg(args, int), 10);
 	else if (print_type == 'u')
-		 i += ft_print_u(va_arg(args, unsigned int), 10);
-
-	// else pour %
+		i += ft_print_u(va_arg(args, unsigned int), 10);
+	else if (print_type == '%')
+		i += write(1, "%", 1);
+	else if (print_type == 'p')
+		i += ft_print_p(va_arg(args, void*));
+	else
+		return (i);
 	return (i);
 }
 
@@ -67,11 +71,11 @@ int	ft_printf(const char *format, ...)
 	return (count);
 }
 
-
+/*
 int	main(void)
 {
-	ft_printf("Bonjour, il s'appelle %s et il a %X ans", "Kevin", -784);
-//	printf("Real printf 2000 result: %x \n", 2000);
-//	printf("Real printf -2000 result: %x \n", -2000);
+	ft_printf("%p\n", 16);
+	printf("%p\n", 16);
 	return (0);
 }
+*/

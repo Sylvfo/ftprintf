@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_print_s.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: sforster <sforster@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/17 11:30:09 by sforster          #+#    #+#             */
-/*   Updated: 2023/11/23 22:51:08 by marvin           ###   ########.fr       */
+/*   Updated: 2023/11/24 12:02:30 by sforster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,11 @@ int	ft_print_s(char *str)
 {
 	int	i;
 
+	if (str == 0)
+	{
+		write (1, "(null)", 6);
+		return (6);
+	}
 	i = 0;
 	while (str[i])
 	{
